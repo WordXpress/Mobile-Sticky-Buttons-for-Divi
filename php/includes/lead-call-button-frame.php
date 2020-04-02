@@ -1,5 +1,7 @@
 <?php
 
+//@todo is this even necessary
+
 if( !class_exists('LCB_setting') ){
 
     class LCB_setting {

@@ -22,10 +22,11 @@ define( 'LEAD_CALL_BUTTON_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
  * legacy require possibly replace with composer autoloading
  */
 require_once __DIR__ . '/php/classes/class-main.php';
+require_once __DIR__ . '/php/classes/class-settings.php';
 require_once __DIR__ . '/php/classes/class-admin.php';
 
 // Create New Framework
-require_once( LEAD_CALL_BUTTON_PLUGIN_PATH . 'php/templates/lead-call-button-frame.php' );
+// require_once( LEAD_CALL_BUTTON_PLUGIN_PATH . 'php/templates/lead-call-button-frame.php' );
 
 /**
  * Add to globals, allows others to remove it if required.

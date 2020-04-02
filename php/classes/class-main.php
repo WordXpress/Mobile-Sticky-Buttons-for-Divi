@@ -16,7 +16,7 @@ class LCBMain {
 		$this->plugin_path = LEAD_CALL_BUTTON_PLUGIN_PATH;
 		$this->plugin_url  = LEAD_CALL_BUTTON_PLUGIN_DIR;
 
-		$this->LCB = new LCB_setting( $this->plugin_path . 'php/templates/settings/lead-call-button-settings-general.php' );
+		$this->LCB = new LCB_setting( $this->plugin_path . 'php/includes/lead-call-button-settings-general.php' );
 		$this->admin = new LCB_Admin();
 
 		// @todo remove this on clean up
