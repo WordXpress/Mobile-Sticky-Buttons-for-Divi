@@ -1,11 +1,28 @@
 <?php
+/**
+ * Plugin Name: Mobile Sticky Buttons for Divi
+ * Plugin URI: http://getyoursmartsiteon.com
+ * Description: Make it easy for website visitors to reach you. When enabled adds customizable buttons to the mobile view of a Divi website, i.e. Call, Map, Schedule.
+ * Author: WordXpress
+ * Author URI: https://wordx.press/
+ * Version: 0.0.1
+ *
+ * This software is forked from the original [Lead Call Buttons](https://wordpress.org/plugins/lead-call-buttons/) plugin (c) Team Smart Site
+ *
+ */
+
 /*
-Plugin Name: Lead Call Buttons
-Plugin URI: http://getyoursmartsiteon.com
-Description: Make it easy for website visitors to reach you. When enabled adds customizable buttons to the mobile view of the website, i.e. Call, Map, Schedule.
-Author: Team Smart Site
-Author URI: http://getyoursmartsiteon.com
-Version: 1.0.7
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3 of the License, or
+(at your option) any later version.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 // Exit if accessed directly.
