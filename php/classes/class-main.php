@@ -1,26 +1,26 @@
 <?php
 
 /**
- * Class LCBMain
+ * Class MSBMain
  */
-class LCBMain {
+class MSB_Main {
 
 	private $plugin_path;
 	private $plugin_url;
 
 	private $admin;
-	private $LCB; //phpcs:ignore
+	private $settings;
 
 	function __construct() {
 
-		$this->plugin_path = LEAD_CALL_BUTTON_PLUGIN_PATH;
-		$this->plugin_url  = LEAD_CALL_BUTTON_PLUGIN_URL;
+		$this->plugin_path = MSB_PLUGIN_PATH;
+		$this->plugin_url  = MSB_PLUGIN_URL;
 
-		$this->LCB = new LCB_setting( $this->plugin_path . 'php/includes/lead-call-button-settings-general.php' );
-		$this->admin = new LCB_Admin();
+		$this->settings = new MSB_Setting( $this->plugin_path . 'php/includes/lead-call-button-settings-general.php' );
+		$this->admin = new MSB_Admin();
 
 		// @todo remove this on clean up
-		//wp_enqueue_style('lead_call_button_css', LEAD_CALL_BUTTON_HOOK.'css/plugin-main.css');
+		//wp_enqueue_style('mobile_sticky_button_css', MSB_HOOK.'css/plugin-main.css');
 
 		$this->init();
 	}
@@ -29,23 +29,23 @@ class LCBMain {
 	 * Initialises action and filter hooks
 	 */
 	protected function init() {
-		add_action( 'wp_head', array( $this, 'lead_call_button_custom_css' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'lead_call_button_wp_enqueue_scripts' ) );
+		add_action( 'wp_head', array( $this, 'mobile_sticky_button_custom_css' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'mobile_sticky_button_wp_enqueue_scripts' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
-		add_action( 'wp_footer', array( $this, 'lead_call_button_active_hook' ) );
+		add_action( 'wp_footer', array( $this, 'mobile_sticky_button_active_hook' ) );
 
 		add_filter( 'plugin_action_links', array( $this, 'settings_link' ), 10, 2 );
-		add_filter( $this->LCB->get_option_group() . '_settings_validate', array( $this, 'validate_settings' ) );
+		add_filter( $this->settings->get_option_group() . '_settings_validate', array( $this, 'validate_settings' ) );
 	}
 
 	/**
 	 * Hooks into the wp_head action
-	 * Loads inline custom CSS from the lead_call_buttons setting
+	 * Loads inline custom CSS from the mobile_sticky_buttons setting
 	 */
-	public function lead_call_button_custom_css() {
+	public function mobile_sticky_button_custom_css() {
 		?>
 		<style type="text/css">
-			<?php echo LCB_get_setting( 'lead_call_buttons', 'general', 'custom-css' ); ?>
+			<?php echo MSB_get_setting( 'mobile_sticky_buttons', 'general', 'custom-css' ); ?>
 		</style>
 		<?php
 	}
@@ -54,7 +54,7 @@ class LCBMain {
 	 * Hooks into wp_enqueue_scripts
 	 * Loads custom scripts and styles
 	 */
-	public function lead_call_button_wp_enqueue_scripts() {
+	public function mobile_sticky_button_wp_enqueue_scripts() {
 		wp_enqueue_style(
 			'font-awesome',
 			'//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
@@ -75,10 +75,10 @@ class LCBMain {
 	 */
 	public function admin_menu() {
 		$page_hook = add_options_page(
-			__( 'Lead Call Buttons', 'lead-call-button-frame' ),
-			__( 'Lead Call Buttons', 'lead-call-button-frame' ),
+			__( 'Mobile Sticky Buttons', 'mobile-sticky-buttons' ),
+			__( 'Mobile Sticky Buttons', 'mobile-sticky-buttons' ),
 			'manage_options',
-			'lead_call_buttons',
+			'mobile_sticky_buttons',
 			array(
 				&$this,
 				'settings_page',
@@ -91,14 +91,14 @@ class LCBMain {
 	 */
 	public function settings_page() { ?>
 		<div class="wrap">
-			<h2>Lead Call Buttons Settings</h2>
+			<h2>Mobile Sticky Buttons Settings</h2>
 			<div class="postbox-container">
 				<div class="postbox">
 					<div id="icon-options-general" class="icon32"></div>
 					<div class="inside">
 						<?php
 						// Output your settings form
-						$this->LCB->settings();
+						$this->settings->settings();
 						?>
 					</div>
 				</div>
@@ -133,7 +133,7 @@ class LCBMain {
 			$this_plugin = plugin_basename( __FILE__ );
 		}
 		if ( $file === $this_plugin ) {
-			$settings_link = '<a href="admin.php?page=lead_call_buttons">' . __( "Settings" ) . '</a>';
+			$settings_link = '<a href="admin.php?page=mobile_sticky_buttons">' . __( "Settings" ) . '</a>';
 			array_unshift( $links, $settings_link );
 		}
 
@@ -144,7 +144,7 @@ class LCBMain {
 	 * Hooks into wp_footer
 	 * Includes the actual lead buttons functionality
 	 */
-	public function lead_call_button_active_hook() {
-		include_once( $this->plugin_path . 'php/templates/lead-call-buttons.php' );
+	public function mobile_sticky_button_active_hook() {
+		include_once( $this->plugin_path . 'php/templates/mobile-sticky-buttons.php' );
 	}
 }

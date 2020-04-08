@@ -3,7 +3,7 @@
     $post_id = $wp_query->get_queried_object_id();
     
     if ( is_page($post_id) OR is_single($post_id) ){
-        $hidecon = get_post_meta($post_id, 'lead_call_buttons_options_hide_lead_call_buttons', true);
+        $hidecon = get_post_meta($post_id, 'mobile_sticky_buttons_options_hide_mobile_sticky_buttons', true);
     } else {
         $hidecon = '';
     }
@@ -11,9 +11,9 @@
     if($hidecon != 'hide-lead-call-buttons'){
            
         $count          = 0;
-        $bg_color       = LCB_get_setting( 'lead_call_buttons', 'general', 'bg-color' );
-        $text_color     = LCB_get_setting( 'lead_call_buttons', 'general', 'text-color' );
-        $btn_animation  = LCB_get_setting( 'lead_call_buttons', 'general', 'btn-animation' );
+        $bg_color       = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'bg-color' );
+        $text_color     = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'text-color' );
+        $btn_animation  = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'btn-animation' );
         $lcb_main_class = 'main_buttons';
 
         if ( $btn_animation ) { 
@@ -22,20 +22,20 @@
         
         if( empty($text_color) ) $text_color = "#fff";
         
-        $callnow_title    = LCB_get_setting( 'lead_call_buttons', 'general', 'callnow-title' );
-        $callnow_icon     = LCB_get_setting( 'lead_call_buttons', 'general', 'callnow-icon' );
-        $callnow_number   = LCB_get_setting( 'lead_call_buttons', 'general', 'callnow-number' );
-        $callnow_onclick  = LCB_get_setting( 'lead_call_buttons', 'general', 'callnow-onclick' );
+        $callnow_title    = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'callnow-title' );
+        $callnow_icon     = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'callnow-icon' );
+        $callnow_number   = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'callnow-number' );
+        $callnow_onclick  = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'callnow-onclick' );
         
-        $schedule_title   = LCB_get_setting( 'lead_call_buttons', 'general', 'schedule-title' );
-        $schedule_icon    = LCB_get_setting( 'lead_call_buttons', 'general', 'schedule-icon' );
-        $schedule_link    = LCB_get_setting( 'lead_call_buttons', 'general', 'schedule-link' );
-        $schedule_onclick = LCB_get_setting( 'lead_call_buttons', 'general', 'schedule-onclick' );
+        $schedule_title   = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'schedule-title' );
+        $schedule_icon    = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'schedule-icon' );
+        $schedule_link    = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'schedule-link' );
+        $schedule_onclick = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'schedule-onclick' );
         
-        $map_title        = LCB_get_setting( 'lead_call_buttons', 'general', 'map-title' );
-        $map_icon         = LCB_get_setting( 'lead_call_buttons', 'general', 'map-icon' );
-        $map_link         = LCB_get_setting( 'lead_call_buttons', 'general', 'map-link' );
-        $map_onclick      = LCB_get_setting( 'lead_call_buttons', 'general', 'map-onclick' );
+        $map_title        = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'map-title' );
+        $map_icon         = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'map-icon' );
+        $map_link         = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'map-link' );
+        $map_onclick      = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'map-onclick' );
         
         if ( !empty ($callnow_number) ) { $count++; }
         if ( !empty ($schedule_link) ) { $count++; }
@@ -56,7 +56,7 @@
         } 
     ?>
 
-    <!--Start Lead Call Buttons-->
+    <!--Start Mobile Sticky Buttons-->
 
     <?php
 
@@ -131,8 +131,8 @@
              }                       
             <?php 
                 if($bg_color == 1) { 
-                    $bg_gd_color1 = LCB_get_setting( 'lead_call_buttons', 'general', 'bg-gd-color1' );
-                    $bg_gd_color2 = LCB_get_setting( 'lead_call_buttons', 'general', 'bg-gd-color2' );               
+                    $bg_gd_color1 = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'bg-gd-color1' );
+                    $bg_gd_color2 = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'bg-gd-color2' );
             ?>
                     body .main_buttons {
                         background: <?php echo $bg_gd_color1; ?>;
@@ -160,7 +160,7 @@
                         }  
             <?php   }
                 } else if($bg_color == 0) { 
-                    $bg_color = LCB_get_setting( 'lead_call_buttons', 'general', 'bg-sl-color' ); ?>
+                    $bg_color = MSB_get_setting( 'mobile_sticky_buttons', 'general', 'bg-sl-color' ); ?>
                     body .main_buttons {
                          background: <?php echo $bg_color; ?>;
                          color: <?php echo $text_color; ?>;
@@ -192,7 +192,7 @@
             }
         </style>
 
-        <!--End Lead Call Buttons-->   
+        <!--End Mobile Sticky Buttons-->
 <?php 
     }   
 ?>

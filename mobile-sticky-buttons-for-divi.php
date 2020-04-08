@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: Mobile Sticky Buttons for Divi
- * Plugin URI: http://getyoursmartsiteon.com
+ * Plugin URI: https://wordx.press/divinizer-plugin-makes-divi-blogs-awesome/
  * Description: Make it easy for website visitors to reach you. When enabled adds customizable buttons to the mobile view of a Divi website, i.e. Call, Map, Schedule.
  * Author: WordXpress
  * Author URI: https://wordx.press/
- * Version: 0.0.1
+ * Version: 0.0.2
  *
- * This software is forked from the original [Lead Call Buttons](https://wordpress.org/plugins/lead-call-buttons/) plugin (c) Team Smart Site
+ * This software is forked from the original [Mobile Sticky Buttons](https://wordpress.org/plugins/lead-call-buttons/) plugin (c) Team Smart Site
  *
  */
 
@@ -30,22 +30,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'LEAD_CALL_BUTTON_HOOK', WP_PLUGIN_URL . '/' . plugin_basename( __DIR__ ) . '/' );
+define( 'MSB_HOOK', WP_PLUGIN_URL . '/' . plugin_basename( __DIR__ ) . '/' );
 
-define( 'LEAD_CALL_BUTTON_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-define( 'LEAD_CALL_BUTTON_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'MSB_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'MSB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 /**
- * legacy require possibly replace with composer autoloading
+ * Require classes
  */
 require_once __DIR__ . '/php/classes/class-main.php';
 require_once __DIR__ . '/php/classes/class-settings.php';
 require_once __DIR__ . '/php/classes/class-admin.php';
 
 // Create New Framework
-// require_once( LEAD_CALL_BUTTON_PLUGIN_PATH . 'php/templates/lead-call-button-frame.php' );
+// require_once( MSB_PLUGIN_PATH . 'php/templates/mobile-sticky-buttons.php' );
 
 /**
  * Add to globals, allows others to remove it if required.
  */
-$GLOBALS['lcb_main'] = new LCBMain();
+$GLOBALS['lcb_main'] = new MSB_Main();

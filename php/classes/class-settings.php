@@ -1,10 +1,10 @@
 <?php
 
-class LCB_setting {
+class MSB_Setting {
 
 	private $option_group;
 
-	function __construct( $settings_file, $option_group = 'lead_call_buttons' )
+	function __construct( $settings_file, $option_group = 'mobile_sticky_buttons' )
 	{
 		if( !is_file( $settings_file ) ) return;
 		require_once( $settings_file );
@@ -50,9 +50,9 @@ class LCB_setting {
 
 	function section_intro( $args )
 	{
-		global $LCB_settings;
-		if(!empty($LCB_settings)){
-			foreach($LCB_settings as $section){
+		global $MSB_settings;
+		if(!empty($MSB_settings)){
+			foreach($MSB_settings as $section){
 				if($section['section_id'] == $args['id']){
 					if(isset($section['section_description']) && $section['section_description']) echo '<p>'. $section['section_description'] .'</p>';
 					break;
@@ -63,10 +63,10 @@ class LCB_setting {
 
 	function process_settings()
 	{
-		global $LCB_settings;
-		if(!empty($LCB_settings)){
-			usort($LCB_settings, array(&$this, 'sort_array'));
-			foreach($LCB_settings as $section){
+		global $MSB_settings;
+		if(!empty($MSB_settings)){
+			usort($MSB_settings, array(&$this, 'sort_array'));
+			foreach($MSB_settings as $section){
 				if(isset($section['section_id']) && $section['section_id'] && isset($section['section_title'])){
 					add_settings_section( $section['section_id'], $section['section_title'], array(&$this, 'section_intro'), $this->option_group );
 					if(isset($section['fields']) && is_array($section['fields']) && !empty($section['fields'])){
@@ -99,15 +99,15 @@ class LCB_setting {
 			'class'   => '',
 			'placeholder' => ''
 		);
-		$defaults = apply_filters( 'LCB_defaults', $defaults );
+		$defaults = apply_filters( 'MSB_defaults', $defaults );
 		extract( wp_parse_args( $args['field'], $defaults ) );
 
 		$options = get_option( $this->option_group .'_settings' );
 		$el_id = $this->option_group .'_'. $section['section_id'] .'_'. $id;
 		$val = (isset($options[$el_id])) ? $options[$el_id] : $std;
 
-		do_action('LCB_before_field');
-		do_action('LCB_before_field_'. $el_id);
+		do_action('MSB_before_field');
+		do_action('MSB_before_field_'. $el_id);
 		switch( $type ){
 			case 'text':
 				$val = esc_attr(stripslashes($val));
@@ -180,22 +180,22 @@ class LCB_setting {
 			default:
 				break;
 		}
-		do_action('LCB_after_field');
-		do_action('LCB_after_field_'. $el_id);
+		do_action('MSB_after_field');
+		do_action('MSB_after_field_'. $el_id);
 	}
 
 	function settings()
 	{
-		do_action('LCB_before_settings');
+		do_action('MSB_before_settings');
 		?>
 		<form action="options.php" method="post">
-			<?php do_action('LCB_before_settings_fields'); ?>
+			<?php do_action('MSB_before_settings_fields'); ?>
 			<?php settings_fields( $this->option_group ); ?>
 			<?php do_settings_sections( $this->option_group ); ?>
 			<p class="submit"><input type="submit" class="button-primary" value="<?php _e( 'Save Changes' ); ?>" /></p>
 		</form>
 		<?php
-		do_action('LCB_after_settings');
+		do_action('MSB_after_settings');
 	}
 
 }

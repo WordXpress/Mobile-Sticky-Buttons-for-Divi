@@ -1,11 +1,11 @@
 <?php
 
-global $LCB_settings;
+global $MSB_settings;
  
-$LCB_settings[] = array( 
+$MSB_settings[] = array(
     'section_id'          => 'general',
     'section_title'       => '',
-    'section_description' => 'Settings for Lead Call Buttons. Leave Link field blank to hide button.',
+    'section_description' => 'Settings for Mobile Sticky Buttons. Leave Link field blank to hide button.',
     'section_order'       => 5,
     'fields'              => array(
         array(
