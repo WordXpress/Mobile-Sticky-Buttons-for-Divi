@@ -16,7 +16,7 @@ class MSB_Main {
 		$this->plugin_path = MSB_PLUGIN_PATH;
 		$this->plugin_url  = MSB_PLUGIN_URL;
 
-		$this->settings = new MSB_Setting( $this->plugin_path . 'php/includes/lead-call-button-settings-general.php' );
+		$this->settings = new MSB_Setting( $this->plugin_path . 'php/includes/button-settings-general.php' );
 		$this->admin = new MSB_Admin();
 
 		// @todo remove this on clean up
@@ -75,8 +75,8 @@ class MSB_Main {
 	 */
 	public function admin_menu() {
 		$page_hook = add_options_page(
-			__( 'Mobile Sticky Buttons', 'mobile-sticky-buttons' ),
-			__( 'Mobile Sticky Buttons', 'mobile-sticky-buttons' ),
+			__( 'Sticky Buttons', 'mobile-sticky-buttons' ),
+			__( 'Sticky Buttons', 'mobile-sticky-buttons' ),
 			'manage_options',
 			'mobile_sticky_buttons',
 			array(
@@ -91,7 +91,7 @@ class MSB_Main {
 	 */
 	public function settings_page() { ?>
 		<div class="wrap">
-			<h2>Mobile Sticky Buttons Settings</h2>
+			<h2>Sticky Button Settings</h2>
 			<div class="postbox-container">
 				<div class="postbox">
 					<div id="icon-options-general" class="icon32"></div>
