@@ -1,7 +1,5 @@
 <?php
 
-//@todo is this even necessary
-
 if( !class_exists('MSB_setting') ){
 
     class MSB_setting {

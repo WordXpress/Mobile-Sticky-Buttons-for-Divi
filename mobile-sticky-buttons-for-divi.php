@@ -42,6 +42,9 @@ require_once __DIR__ . '/php/classes/class-main.php';
 require_once __DIR__ . '/php/classes/class-settings.php';
 require_once __DIR__ . '/php/classes/class-admin.php';
 
+// Create New Button Framework
+require_once __DIR__ . '/php/includes/button-framework.php';
+
 // Create New Framework
 // require_once( MSB_PLUGIN_PATH . 'php/templates/mobile-sticky-buttons.php' );
 
