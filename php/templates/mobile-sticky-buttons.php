@@ -63,23 +63,22 @@
         echo $main_div;
         	 
     	if ( !empty ($callnow_number) ) { 
-    	   
+
     	    $callnow_onclick   = ($callnow_onclick) ? $callnow_onclick : ''; 
             $callnow_onclick   = (!empty($callnow_onclick)) ? 'onclick="'.$callnow_onclick.'"' : ''; 
             $button_uniq_name  = (!empty($callnow_title)) ? strtolower(str_replace(' ', '_', $callnow_title)) : '';
             $button_uniq_class = ($button_uniq_name) ? 'lcb_'.$button_uniq_name.'_area' : ''; 
-            $button_uniq_id    = ($button_uniq_name) ? 'id="lcb_'.$button_uniq_name.'_area"' : ''; ?>
-                	
-        	<div class="callnow_area on <?php echo esc_attr($layout_class.' '.$button_uniq_class); ?>" <?php echo esc_attr($button_uniq_id);?>>
-                <a <?php echo $callnow_onclick; ?> href="<?php echo $callnow_number;?>">
-            		<div class="callnow_bottom">
-            			<span class="b_callnow">
-                            <?php echo $callnow_icon; ?>
-                            <?php echo $callnow_title; ?>
-                        </span>
-            		</div>
+            $button_uniq_id    = ($button_uniq_name) ? 'id="lcb_'.$button_uniq_name.'_area"' : '';
+
+            ?>
+            <div class="callnow_area on <?php echo esc_attr( $layout_class . ' ' . $button_uniq_class ); ?>" <?php echo esc_attr( $button_uniq_id ); ?>>
+                <a <?php echo $callnow_onclick; ?> href="<?php echo $callnow_number; ?>">
+                    <div class="callnow_bottom">
+                        <span class="msb_sticky_button b_callnow et-pb-icon"><?php echo $callnow_icon; ?></span>
+	                    <?php echo $callnow_title; ?>
+                    </div>
                 </a>
-        	</div>
+            </div>
     
     	<?php } if ( !empty ($schedule_link) ) { 
             
@@ -92,8 +91,7 @@
         	<div class="schedule_area on <?php echo esc_attr($layout_class.' '.$button_uniq_class); ?>" <?php echo esc_attr($button_uniq_id);?>>
                 <a <?php echo $schedule_onclick; ?> href="<?php echo $schedule_link; ?>">
             		<div class="schedule_bottom">
-            			<span class="b_schedule">
-                            <?php echo $schedule_icon; ?>
+                        <span class="msb_sticky_button b_schedule et-pb-icon"><?php echo $schedule_icon; ?></span>
                             <?php echo $schedule_title; ?>
                         </span>
             		</div>
@@ -111,8 +109,7 @@
         	<div class="map_area on <?php echo esc_attr($layout_class.' '.$button_uniq_class); ?>" <?php echo esc_attr($button_uniq_id);?>>
                 <a <?php echo $map_onclick; ?> href="<?php echo $map_link; ?>">
             		<div class="map_bottom">
-            			<span class="b_map">
-                            <?php echo $map_icon; ?>
+                        <span class="msb_sticky_button b_map et-pb-icon"><?php echo $map_icon; ?></span>
                             <?php echo $map_title; ?>
                         </span>
             		</div>

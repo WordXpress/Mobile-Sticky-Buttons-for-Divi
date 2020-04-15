@@ -36,17 +36,14 @@ define( 'MSB_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'MSB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 /**
- * Require classes
+ * Base classes
  */
 require_once __DIR__ . '/php/classes/class-main.php';
 require_once __DIR__ . '/php/classes/class-settings.php';
 require_once __DIR__ . '/php/classes/class-admin.php';
 
-// Create New Button Framework
-require_once __DIR__ . '/php/includes/button-framework.php';
-
-// Create New Framework
-// require_once( MSB_PLUGIN_PATH . 'php/templates/mobile-sticky-buttons.php' );
+// Generic functions
+require_once __DIR__ . '/php/includes/button-functions.php';
 
 /**
  * Add to globals, allows others to remove it if required.

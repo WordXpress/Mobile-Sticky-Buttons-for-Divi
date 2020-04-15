@@ -56,10 +56,6 @@ class MSB_Main {
 	 */
 	public function mobile_sticky_button_wp_enqueue_scripts() {
 		wp_enqueue_style(
-			'font-awesome',
-			'//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
-		);
-		wp_enqueue_style(
 			'lcb-css-movement',
 			$this->plugin_url . '/css/movement.css'
 		);

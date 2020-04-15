@@ -4,17 +4,20 @@ class MSB_Setting {
 
 	private $option_group;
 
-	function __construct( $settings_file, $option_group = 'mobile_sticky_buttons' )
-	{
-		if( !is_file( $settings_file ) ) return;
+	function __construct( $settings_file, $option_group = 'mobile_sticky_buttons' ) {
+		if ( ! is_file( $settings_file ) ) {
+			return;
+		}
 		require_once( $settings_file );
 
-		$this->option_group = preg_replace("/[^a-z0-9]+/i", "", basename( $settings_file, '.php' ));
-		if( $option_group ) $this->option_group = $option_group;
+		$this->option_group = preg_replace( "/[^a-z0-9]+/i", "", basename( $settings_file, '.php' ) );
+		if ( $option_group ) {
+			$this->option_group = $option_group;
+		}
 
-		add_action('admin_init', array(&$this, 'admin_init'));
+		add_action( 'admin_init', array( &$this, 'admin_init' ) );
 		//add_action('admin_notices', array(&$this, 'admin_notices'));
-		add_action('admin_enqueue_scripts', array(&$this, 'admin_enqueue_scripts'));
+		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_enqueue_scripts' ) );
 	}
 
 	function get_option_group()
@@ -112,6 +115,11 @@ class MSB_Setting {
 			case 'text':
 				$val = esc_attr(stripslashes($val));
 				echo '<input type="text" name="'. $this->option_group .'_settings['. $el_id .']" id="'. $el_id .'" value="'. $val .'" class="regular-text '. $class .'" />';
+				if($desc)  echo '<p class="description">'. $desc .'</p>';
+				break;
+			case 'html_text':
+				$val = esc_attr(stripslashes($val));
+				echo '<input type="text" name="'. $this->option_group .'_settings['. $el_id .']" id="'. $el_id .'" value="' . htmlspecialchars( $val, ENT_QUOTES | ENT_HTML5 ) . '" class="regular-text ' . $class . '" />';
 				if($desc)  echo '<p class="description">'. $desc .'</p>';
 				break;
 			case 'textarea':
