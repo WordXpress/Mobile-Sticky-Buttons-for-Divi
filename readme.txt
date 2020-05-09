@@ -1,8 +1,8 @@
-=== Lead Call Buttons ===
-Contributors: polishyourimage, jabintania, adamgillrie
-Website: http://polishyourimage.com
-Tags: leads, call, buttons, mobile, responsive, marketing, SEO, agency, designer, marketer, phone, plugin, iphone, android, contact, social, local, location
-Requires at least: 4.0
+=== Mobile Sticky Buttons for Divi ===
+Contributors: wordxpress1, thefiddler, polishyourimage, jabintania, adamgillrie
+Website: http://wordx.press/divi-support-maintenance/?utm_source=mobilestickydivi_plugin&utm_medium=wp_org_page&utm_campaign=plugins
+Tags: divi, mobile buttons, call buttons, mobile, marketing
+Requires at least: 5.0
 Tested up to: 5.2.1
 Stable tag: 1.0.7
 
