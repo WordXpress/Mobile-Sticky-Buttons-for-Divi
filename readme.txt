@@ -1,10 +1,10 @@
 === Mobile Sticky Buttons for Divi ===
-Contributors: wordxpress1, psykro, tevyaw, polishyourimage, jabintania, adamgillrie
-Donate link: https://paypal.me/fiddler
-Tags: Divi, leads, call, buttons, mobile, responsive, marketing, SEO, agency, designer, marketer, phone, plugin, iphone, android, contact, social, local, location
-Requires at least: 4.9
-Tested up to: 5.4
-Stable tag: 1.0.0
+Contributors: wordxpress1, thefiddler, psykro, polishyourimage, jabintania, adamgillrie
+Website: http://wordx.press/divi-support-maintenance/?utm_source=mobilestickydivi_plugin&utm_medium=wp_org_page&utm_campaign=plugins
+Tags: divi, mobile buttons, call buttons, mobile, marketing
+Requires at least: 5.0
+Tested up to: 5.2.1
+Stable tag: 1.0.7
 Requires PHP: 5.6
 License: GPLv2 or later
 
@@ -59,9 +59,12 @@ Only available in english.
 
 == Frequently Asked Questions ==
 
+= Onclick Tracking Code - how do I add my tracking code? =
+Check [Here](https://wordpress.org/support/topic/onclick-tracking-code-help/#post-9320102)
+
 == Changelog ==
 
-= 1.20.13 =
+= 1.0.7 =
 * Initial Release
 
 
