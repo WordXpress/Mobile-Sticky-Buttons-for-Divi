@@ -2,6 +2,11 @@
 	display: none;
 }
 
+.msb_sticky_button.et-pb-icon {
+    display: block;
+    font-size: 32px;
+}
+
 /* fixing */
 
 @media (max-width: 790px) { 

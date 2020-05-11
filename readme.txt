@@ -1,11 +1,12 @@
 === Mobile Sticky Buttons for Divi ===
-Contributors: wordxpress1, thefiddler, polishyourimage, jabintania, adamgillrie
+Contributors: wordxpress1, thefiddler, psykro, polishyourimage, jabintania, adamgillrie
 Website: http://wordx.press/divi-support-maintenance/?utm_source=mobilestickydivi_plugin&utm_medium=wp_org_page&utm_campaign=plugins
 Tags: divi, mobile buttons, call buttons, mobile, marketing
 Requires at least: 5.0
 Tested up to: 5.2.1
 Stable tag: 1.0.7
-
+Requires PHP: 5.6
+License: GPLv2 or later
 
 == Description ==
 
@@ -28,8 +29,6 @@ Special features:
 - Compatible with small devices
 - Very lightweight
 
-
-
 == Screenshots ==
 
 1. Admin Panel Button Settings
@@ -37,12 +36,11 @@ Special features:
 3. Plugin Preview
 4. Hide Buttons From Specific Page or Post
 
-
 == Installation ==
 
-1. Upload `lead-call-buttons` folder to your `/wp-content/plugins/` directory.
+1. Upload `mobile-sticky-buttons-for-divi` folder to your `/wp-content/plugins/` directory.
 2. Activate the plugin.
-3. Use "Lead Call Buttons" from wordpress admin menu to configure button icon, text, and link.
+3. Use "Mobile Sticky Buttons" from WordPress admin menu to configure button icon, text, and link.
 
 Admin panel setup:
 
@@ -50,7 +48,6 @@ Admin panel setup:
 - Icon: Font Awesome Icon.
 - Link: The Url where it will redirect on click.
 - Onclick Code: The tracking code 
-
 
 == Upgrade Notice ==
 
@@ -60,36 +57,15 @@ Make sure you get the latest version
 
 Only available in english.
 
-
 == Frequently Asked Questions ==
 
 = Onclick Tracking Code - how do I add my tracking code? =
 Check [Here](https://wordpress.org/support/topic/onclick-tracking-code-help/#post-9320102)
 
-
-
 == Changelog ==
 
-= 1.0.1 =
-First released version.
-
-= 1.0.2 =
-Bug Fix: Addresses an issue where Lead call buttons caused a warning on sites with specific configurations.
-
-= 1.0.3 =
-Lead call buttons hide option from individual post or page.
-
-= 1.0.4 =
-Added gradient color option.
-
-= 1.0.5 =
-Added SSL support.
-
-= 1.0.6 =
-Added onclick option & ids, to track links.
-
 = 1.0.7 =
-Added button animation option.
+* Initial Release
 
 
 

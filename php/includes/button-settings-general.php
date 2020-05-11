@@ -1,11 +1,11 @@
 <?php
 
-global $LCB_settings;
+global $MSB_settings;
  
-$LCB_settings[] = array( 
+$MSB_settings[] = array(
     'section_id'          => 'general',
     'section_title'       => '',
-    'section_description' => 'Settings for Lead Call Buttons. Leave Link field blank to hide button.',
+    'section_description' => 'Settings for Mobile Sticky Buttons. Leave Link field blank to hide button.',
     'section_order'       => 5,
     'fields'              => array(
         array(
@@ -18,8 +18,8 @@ $LCB_settings[] = array(
         array(
             'id'          => 'callnow-icon',
             'title'       => 'Icon',
-            'desc'        => 'Font Awesome Icon. i.e., &lt;i class="fa fa-phone"&gt;&lt;/i&gt;',
-            'type'        => 'text',
+            'desc'        => 'Elegant Icon Code i.e., ' . htmlspecialchars( '&#xe090;', ENT_QUOTES | ENT_HTML5 ) . '. See the full list <a target="_blank" href="https://www.elegantthemes.com/blog/resources/elegant-icon-font#glyphs">here</a>',
+            'type'        => 'html_text',
             'std'         => ''
         ),      
         array(
@@ -47,8 +47,8 @@ $LCB_settings[] = array(
         array(
             'id'          => 'schedule-icon',
             'title'       => 'Icon',
-            'desc'        => '',
-            'type'        => 'text',
+            'desc'        => 'Elegant Icon Code i.e., ' . htmlspecialchars( '&#xe090;', ENT_QUOTES | ENT_HTML5 ) . '. See the full list <a target="_blank" href="https://www.elegantthemes.com/blog/resources/elegant-icon-font#glyphs">here</a>',
+            'type'        => 'html_text',
             'std'         => ''
         ),      
         array(
@@ -76,8 +76,8 @@ $LCB_settings[] = array(
         array(
             'id'          => 'map-icon',
             'title'       => 'Icon',
-            'desc'        => '',
-            'type'        => 'text',
+            'desc'        => 'Elegant Icon Code i.e., ' . htmlspecialchars( '&#xe090;', ENT_QUOTES | ENT_HTML5 ) . '. See the full list <a target="_blank" href="https://www.elegantthemes.com/blog/resources/elegant-icon-font#glyphs">here</a>',
+            'type'        => 'html_text',
             'std'         => ''
         ),      
         array(
