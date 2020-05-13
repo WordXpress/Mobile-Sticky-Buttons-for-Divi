@@ -1,8 +1,15 @@
 <?php
 
 class MSB_Admin {
-    
-	public function __construct() {
+
+    private $plugin_path;
+    private $plugin_url;
+
+	public function __construct($plugin_path, $plugin_url) {
+
+		$this->plugin_path = $plugin_path;
+		$this->plugin_url  = $plugin_url;
+
 		$this->init();
 	}
 
@@ -20,8 +27,8 @@ class MSB_Admin {
 	 */
 	public function mobile_sticky_button_latest_jquery() {
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'mobile_sticky_button_movement_script', plugins_url( '/js/movement.js', __FILE__ ) );
-		wp_enqueue_script( 'mobile_sticky_button_script', plugins_url( '/js/script.js', __FILE__ ) );
+		wp_enqueue_script( 'mobile_sticky_button_movement_script', $this->plugin_url . 'js/movement.js', array('jquery'), MSB_PLUGIN_VERSION, true );
+		wp_enqueue_script( 'mobile_sticky_button_script', $this->plugin_url . 'js/script.js', array('jquery'), MSB_PLUGIN_VERSION, true  );
 	}
 
 	/**
@@ -29,8 +36,8 @@ class MSB_Admin {
 	 * Loads back end scripts and styles
 	 */
 	public function mobile_sticky_button_admin_init() {
-		wp_register_script( 'mobile_sticky_button_script', plugins_url( '/js/script.js', __FILE__ ) );
-		wp_enqueue_style( 'mobile_sticky_button_style', plugins_url( '/css/backend-styles.css', __FILE__ ) );
+		wp_register_script( 'mobile_sticky_button_script', $this->plugin_url . 'js/script.js', array(), MSB_PLUGIN_VERSION, true );
+		wp_enqueue_style( 'mobile_sticky_button_style', $this->plugin_url . '/css/backend-styles.css', array(), MSB_PLUGIN_VERSION, true );
 	}
 
 	/**

@@ -17,7 +17,7 @@ class MSB_Main {
 		$this->plugin_url  = MSB_PLUGIN_URL;
 
 		$this->settings = new MSB_Setting( $this->plugin_path . 'php/includes/button-settings-general.php' );
-		$this->admin = new MSB_Admin();
+		$this->admin = new MSB_Admin( $this->plugin_path, $this->plugin_url );
 
 		// @todo remove this on clean up
 		//wp_enqueue_style('mobile_sticky_button_css', MSB_HOOK.'css/plugin-main.css');
@@ -31,7 +31,7 @@ class MSB_Main {
 	protected function init() {
 		add_action( 'wp_head', array( $this, 'mobile_sticky_button_custom_css' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'mobile_sticky_button_wp_enqueue_scripts' ) );
-		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+		add_action( 'admin_menu', array( $this, 'admin_menu' ), 11 );
 		add_action( 'wp_footer', array( $this, 'mobile_sticky_button_active_hook' ) );
 
 		add_filter( 'plugin_action_links', array( $this, 'settings_link' ), 10, 2 );
@@ -70,13 +70,14 @@ class MSB_Main {
 	 * Adds options link
 	 */
 	public function admin_menu() {
-		$page_hook = add_options_page(
+		add_submenu_page(
+			'et_divi_options',
 			__( 'Sticky Buttons', 'mobile-sticky-buttons' ),
 			__( 'Sticky Buttons', 'mobile-sticky-buttons' ),
 			'manage_options',
 			'mobile_sticky_buttons',
 			array(
-				&$this,
+				$this,
 				'settings_page',
 			)
 		);
