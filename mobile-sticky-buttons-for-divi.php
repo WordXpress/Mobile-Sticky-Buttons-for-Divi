@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Mobile Sticky Buttons for Divi
- * Plugin URI: https://wordx.press/divinizer-plugin-makes-divi-blogs-awesome/
+ * Plugin URI: http://wordx.press/divi-support-maintenance/?utm_source=mobilestickydivi_plugin&utm_medium=wp_org_page&utm_campaign=plugins
  * Description: Make it easy for website visitors to reach you. When enabled adds customizable buttons to the mobile view of a Divi website, i.e. Call, Map, Schedule.
- * Author: WordXpress
- * Author URI: https://wordx.press/
  * Version: 0.0.2
+ * Author: WordXpress - Divi Support
+ * Author URI: http://wordx.press/divi-support-maintenance/?utm_source=divinizer_plugin&utm_medium=author_uri&utm_campaign=plugins
  *
  * This software is forked from the original [Mobile Sticky Buttons](https://wordpress.org/plugins/lead-call-buttons/) plugin (c) Team Smart Site
  *

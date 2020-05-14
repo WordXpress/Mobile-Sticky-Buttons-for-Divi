@@ -3,8 +3,8 @@ Contributors: wordxpress1, thefiddler, psykro, polishyourimage, jabintania, adam
 Website: http://wordx.press/divi-support-maintenance/?utm_source=mobilestickydivi_plugin&utm_medium=wp_org_page&utm_campaign=plugins
 Tags: divi, mobile buttons, call buttons, mobile, marketing
 Requires at least: 5.0
-Tested up to: 5.2.1
-Stable tag: 1.0.7
+Tested up to: 5.4.1
+Stable tag: 0.0.2
 Requires PHP: 5.6
 License: GPLv2 or later
 
